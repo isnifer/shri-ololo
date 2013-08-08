@@ -1,0 +1,14 @@
+.g-clf:after,
+.g-clf:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font: normal 16px "Arial", Tahoma, Verdana;
+  background: #fff;
+}
