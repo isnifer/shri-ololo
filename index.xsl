@@ -54,7 +54,7 @@
                         <xsl:value-of select="Page/Content/info/header"/>
                     </h2>
                     <div class="b-header__description">
-                        <xsl:value-of select="Page/Content/info/description" disable-output-escaping="yes"/>
+                        <xsl:apply-templates select="Page/Content/info/description/*"/>
                     </div>
                 </div>
             </header>
@@ -68,7 +68,7 @@
 
                     <ul class="b-question__list">
                         <xsl:for-each select="//questions/item">
-                            <li class="b-question__item g-clf">
+                            <li class="b-question__item">
                                 <em class="b-question__number">Вопрос №<xsl:value-of select="@id"/></em>
                                 <div class="b-question__interactive">
                                     <xsl:apply-templates select="*"/>
