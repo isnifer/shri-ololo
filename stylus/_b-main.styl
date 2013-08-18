@@ -1,11 +1,10 @@
 /* Основной контент  */
 .b-main
+  padding-left: 30px
   width: 700px
-
 
 /* Список вопросов */
 .b-question
-  padding-left: 30px
 
   &__title
     margin: 10px 0
@@ -58,11 +57,11 @@
 
   &__visibility
     display: inline-block
+    float: left
+    margin-right: 5px
     width: 16px
     height: 16px
     background: url(../img/plus_minus.png) no-repeat 0 -16px
-    float: left
-    margin-right: 5px
     cursor: pointer
 
     &_state_plus
@@ -98,6 +97,83 @@
     margin: 20px 0 0
     width: 100%
     height: 100px
-    resize: vertical
-    box-shadow: inset 1px 1px 2px rgba(0,0,0,.3)
     border: 1px solid #c0c0c0
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2)
+    resize: vertical
+
+/* Стандартная форма с рег.данными */
+.b-about
+  margin-top: 30px
+
+  &__title
+    margin: 10px 0
+    font-weight: bold
+    font-size: 1.2em
+
+  &__form
+    display: block
+
+  &__label
+    display: block
+    padding: 5px 0
+    font-size: (13/16)*1em
+
+    &_empty-name
+      padding-left: 220px
+
+    &_another-offer
+      display: none
+
+      &_state_visible
+        display: block
+
+  &__partial-name
+    display: inline-block
+    float: left
+    width: 220px
+
+    &_email
+      font-weight: bold
+
+  &__our-offer
+    display: block
+    margin-bottom: 10px
+
+  &__input
+    padding: 3px 5px
+    width: 100%
+    height: 24px
+    border: 1px solid #c0c0c0
+    box-shadow: inset 1px 1px 1px rgba(0,0,0,.2)
+
+    &_another
+      display: none
+
+  &__answer
+    overflow: hidden
+
+  &__textarea
+    display: block
+    margin: 0
+    width: 100%
+    height: 100px
+    border: 1px solid #c0c0c0
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.2)
+    resize: vertical
+
+  &__rights
+    position: relative
+    top: -2px
+    padding-left: 3px
+    font-weight: bold
+    font-size: (13/16)*1em
+
+  &__control-buttons
+    margin: 5px 0
+    background: #c0c0c0
+    text-align: center
+    padding: 5px 0
+    font-size: (13/16)*1em
+
+    button
+      margin: 0 10px

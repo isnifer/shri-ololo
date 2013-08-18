@@ -23,16 +23,59 @@ html(ng-app="myApp")
             div.b-main.g-clf
                 // Список вопросов
                 div.b-question
-                    h4.b-question__title
-                        {{ questionTitle }}
-                    ul.b-question__list
-                        li.b-question__item.g-clf(ng-repeat="question in questions")
+                    h4.b-question__title {{ questionTitle }}
+                    form.b-question__list
+                        label.b-question__item.g-clf(ng-repeat="question in questions")
                             i.b-question__visibility
-                            em.b-question__number
-                                Вопрос №{{ $index + 1 }}
+                            em.b-question__number Вопрос №{{ $index + 1 }}
                             div.b-question__interactive
                                 div(ng-bind-html-unsafe="question.text")
-                                textarea(class="b-question__answer")(name="field-{{ $index + 1 }}_answer")
+                                textarea(class="b-question__answer")(name="field-{{ $index + 1 }}_answer")(required="required")
+
+                        div.b-about
+                            h4.b-about__title Расскажите нам о себе
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name Резюме до 250 КБ
+                                div.b-about__answer
+                                    input(type="file")(name="summary").b-about__file
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name Ссылка на профиль в Моем Круге
+                                div.b-about__answer
+                                    input(type="text")(name="moikrug").b-about__input
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name Имя, Фамилия
+                                div.b-about__answer
+                                    input(type="text")(name="names").b-about__input
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name Телефон
+                                div.b-about__answer
+                                    input(type="text")(name="phone").b-about__input
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name.b-about__partial-name_email E-mail
+                                div.b-about__answer
+                                    input(type="email")(name="email").b-about__input
+                            label.b-about__label.g-clf
+                                span.b-about__partial-name Дополнительные сведения
+                                div.b-about__answer
+                                    textarea(name="additional").b-about__textarea
+                            label.b-about__label.b-about__label_empty-name.g-clf
+                                span.b-about__our-offer Откуда вы узнали о нашем предложении?
+                                select.b-about__select.b-about__select_offer(name="where")
+                                    option(value="hr") От HR-менеджера Яндекс
+                                    option(value="yasubbotnik") Яндекс.Субботник
+                                    option(value="yac") Yet Another Conference
+                                    option(value="anotherconf") На другой конференции
+                                    option(value="search") Из поиска
+                                    option(value="recommend") По рекомендации
+                                    option(value="another") Другое
+                            label.b-about__label.b-about__label_empty-name.b-about__label_another-offer
+                                input.b-about__input(name="other_offer_place")
+                            label.b-about__label.g-clf.b-about__label_empty-name.g-clf
+                                input(type="checkbox").b-about__checkbox
+                                span.b-about__rights Я даю свое согласие на передачу в ООО «ЯНДЕКС» резюме и/или анкеты, содержащих мои персональные данные, и согласен с тем, что они будут храниться в ООО «ЯНДЕКС» в течение 5 лет и будут обрабатываться исключительно для целей предложения мне вакансий группы компаний «ЯНДЕКС», в соответствии с Федеральным законом «О персональных данных».
+                            div.b-about__control-buttons
+                                button(type="submit").b-about__submit Отправить
+                                button.b-about__clear Очистить
 
             // Подвал
             footer.b-footer
