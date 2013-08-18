@@ -3,6 +3,7 @@
   width: 700px
 
 
+/* Список вопросов */
 .b-question
   padding-left: 30px
 
@@ -55,6 +56,18 @@
     &:first-child
       margin-top: 0
 
+  &__visibility
+    display: inline-block
+    width: 16px
+    height: 16px
+    background: url(../img/plus_minus.png) no-repeat 0 -16px
+    float: left
+    margin-right: 5px
+    cursor: pointer
+
+    &_state_plus
+      background-position: 0 0
+
   &__number
     float: left
     margin-right: 100px
@@ -63,6 +76,9 @@
 
   &__interactive
     overflow: hidden
+
+    &_state_hidden
+      display: none
 
   &__text
     margin: 0 0 10px

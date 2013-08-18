@@ -26,7 +26,8 @@ html(ng-app="myApp")
                     h4.b-question__title
                         {{ questionTitle }}
                     ul.b-question__list
-                        li.b-question__item(ng-repeat="question in questions")
+                        li.b-question__item.g-clf(ng-repeat="question in questions")
+                            i.b-question__visibility
                             em.b-question__number
                                 Вопрос №{{ $index + 1 }}
                             div.b-question__interactive
@@ -36,6 +37,7 @@ html(ng-app="myApp")
             // Подвал
             footer.b-footer
                 p.b-footer__year ШРИ 2013. Москва
+
 
         script(src="js/libs/angular.js")
         script(src="js/libs/jquery-1.10.2.min.js")

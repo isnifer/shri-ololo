@@ -136,7 +136,7 @@
         <item url="css/style.css"></item>
     </css>
     <js>
-        <item url="js/jquery-1.10.2.min.js"></item>
+        <item url="js/libs/jquery-1.10.2.min.js"></item>
         <item url="js/common.js"></item>
     </js>
 </Page> 

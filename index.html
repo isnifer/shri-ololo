@@ -23,7 +23,7 @@
         <div class="b-question">
           <h4 class="b-question__title">{{ questionTitle }}</h4>
           <ul class="b-question__list">
-            <li ng-repeat="question in questions" class="b-question__item"><em class="b-question__number">Вопрос №{{ $index + 1 }}</em>
+            <li ng-repeat="question in questions" class="b-question__item g-clf"><i class="b-question__visibility"></i><em class="b-question__number">Вопрос №{{ $index + 1 }}</em>
               <div class="b-question__interactive">
                 <div ng-bind-html-unsafe="question.text"></div>
                 <textarea name="field-{{ $index + 1 }}_answer" class="b-question__answer"></textarea>

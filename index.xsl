@@ -74,7 +74,8 @@
 
                     <ul class="b-question__list">
                         <xsl:for-each select="//questions/item">
-                            <li class="b-question__item">
+                            <li class="b-question__item g-clf">
+                                <i class="b-question__visibility"></i>
                                 <em class="b-question__number">Вопрос №<xsl:value-of select="@id"/></em>
                                 <div class="b-question__interactive">
                                     <xsl:apply-templates select="*"/>

@@ -91,6 +91,18 @@ body {
 .b-question__item:first-child {
   margin-top: 0;
 }
+.b-question__visibility {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/plus_minus.png") no-repeat 0 -16px;
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.b-question__visibility_state_plus {
+  background-position: 0 0;
+}
 .b-question__number {
   float: left;
   margin-right: 100px;
@@ -99,6 +111,9 @@ body {
 }
 .b-question__interactive {
   overflow: hidden;
+}
+.b-question__interactive_state_hidden {
+  display: none;
 }
 .b-question__text {
   margin: 0 0 10px;
