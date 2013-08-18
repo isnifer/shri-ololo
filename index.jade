@@ -1,0 +1,43 @@
+doctype html
+html(ng-app="myApp")
+    head
+        meta(charset="UTF-8")
+        // if lt IE 9
+            script(src="js/libs/html5shiv-printshiv.js")
+        link(href="css/normalize.css")(rel="stylesheet")
+        link(href="css/style.css")(rel="stylesheet")
+        title Angular & Jade
+    body
+        // Обертка
+        div.b-page(ng-controller="Shri")
+
+            // Шапка
+            header.b-header.g-clf
+                img.b-header__logo(src="img/logo.png")
+                div.b-header__attributes
+                    h2.b-header__name
+                        {{ header }}
+                    div.b-header__description(ng-bind-html-unsafe="description")
+
+            // Основной контент
+            div.b-main.g-clf
+                // Список вопросов
+                div.b-question
+                    h4.b-question__title
+                        {{ questionTitle }}
+                    ul.b-question__list
+                        li.b-question__item(ng-repeat="question in questions")
+                            em.b-question__number
+                                Вопрос №{{ $index + 1 }}
+                            div.b-question__interactive
+                                div(ng-bind-html-unsafe="question.text")
+                                textarea(class="b-question__answer")(name="field-{{ $index + 1 }}_answer")
+
+            // Подвал
+            footer.b-footer
+                p.b-footer__year ШРИ 2013. Москва
+
+        script(src="js/libs/angular.js")
+        script(src="js/libs/jquery-1.10.2.min.js")
+        script(src="js/myApp.js")
+        script(src="js/common.js")

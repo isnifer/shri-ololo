@@ -28,6 +28,12 @@
                     <span class="b-question__label-name"><xsl:value-of select="text()"/></span>
                 </label>
             </xsl:when>
+            <xsl:when test="@tag = 'input'">
+                <label class="b-question__label">
+                    <input class="b-question__checkbox" type="checkbox" name="{@name}"/>
+                    <span class="b-question__checkbox-name"><xsl:value-of select="."/></span>
+                </label>
+            </xsl:when>
         </xsl:choose>
     </xsl:template>
 
@@ -72,14 +78,6 @@
                                 <em class="b-question__number">Вопрос №<xsl:value-of select="@id"/></em>
                                 <div class="b-question__interactive">
                                     <xsl:apply-templates select="*"/>
-                                    <!--<xsl:if test="checkboxes">
-                                        <xsl:for-each select="checkboxes/item">
-                                            <label class="b-question__label">
-                                                <input class="b-question__checkbox" type="checkbox" name="{@name}"/>
-                                                <span class="b-question__checkbox-name"><xsl:value-of select="."/></span>
-                                            </label>
-                                        </xsl:for-each>
-                                    </xsl:if>-->
                                     <textarea class="b-question__answer" name="field-{@id}_answer"></textarea>
                                 </div>
                             </li>

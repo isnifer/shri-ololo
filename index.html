@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8"><!--[if lt IE 9]>
+    <script src="js/libs/html5shiv-printshiv.js"></script><![endif]-->
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <title>Angular & Jade</title>
+  </head>
+  <body>
+    <!-- Обертка-->
+    <div ng-controller="Shri" class="b-page">
+      <!-- Шапка-->
+      <header class="b-header g-clf"><img src="img/logo.png" class="b-header__logo">
+        <div class="b-header__attributes">
+          <h2 class="b-header__name">{{ header }}</h2>
+          <div ng-bind-html-unsafe="description" class="b-header__description"></div>
+        </div>
+      </header>
+      <!-- Основной контент-->
+      <div class="b-main g-clf">
+        <!-- Список вопросов-->
+        <div class="b-question">
+          <h4 class="b-question__title">{{ questionTitle }}</h4>
+          <ul class="b-question__list">
+            <li ng-repeat="question in questions" class="b-question__item"><em class="b-question__number">Вопрос №{{ $index + 1 }}</em>
+              <div class="b-question__interactive">
+                <div ng-bind-html-unsafe="question.text"></div>
+                <textarea name="field-{{ $index + 1 }}_answer" class="b-question__answer"></textarea>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Подвал-->
+      <footer class="b-footer">
+        <p class="b-footer__year">ШРИ 2013. Москва</p>
+      </footer>
+    </div>
+    <script src="js/libs/angular.js"></script>
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/myApp.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>
