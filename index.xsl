@@ -41,7 +41,7 @@
     <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Authors</title>
+        <title>XSL</title>
         <!-- CSS -->
         <xsl:for-each select="//css/item">
             <link href="{@url}" rel="stylesheet" type="text/css" />
