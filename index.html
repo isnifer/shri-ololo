@@ -23,10 +23,10 @@
         <div class="b-question">
           <h4 class="b-question__title">{{ questionTitle }}</h4>
           <form class="b-question__list">
-            <label ng-repeat="question in questions" class="b-question__item g-clf"><i class="b-question__visibility"></i><em class="b-question__number">Вопрос №{{ $index + 1 }}</em>
+            <label ng-repeat="question in questions" for="field-{{ $index + 1 }}_answer" class="b-question__item g-clf"><i class="b-question__visibility"></i><em class="b-question__number">Вопрос №{{ $index + 1 }}</em>
               <div class="b-question__interactive">
                 <div ng-bind-html-unsafe="question.text"></div>
-                <textarea name="field-{{ $index + 1 }}_answer" required="required" class="b-question__answer"></textarea>
+                <textarea name="field-{{ $index + 1 }}_answer" required="required" id="field-{{ $index + 1 }}_answer" class="b-question__answer b-question__field"></textarea>
               </div>
             </label>
             <div class="b-about">
@@ -38,31 +38,32 @@
               </label>
               <label class="b-about__label g-clf"><span class="b-about__partial-name">Ссылка на профиль в Моем Круге</span>
                 <div class="b-about__answer">
-                  <input type="text" name="moikrug" class="b-about__input">
+                  <input type="text" name="moikrug" class="b-about__input b-question__field">
                 </div>
               </label>
               <label class="b-about__label g-clf"><span class="b-about__partial-name">Имя, Фамилия</span>
                 <div class="b-about__answer">
-                  <input type="text" name="names" class="b-about__input">
+                  <input type="text" name="names" class="b-about__input b-question__field">
                 </div>
               </label>
               <label class="b-about__label g-clf"><span class="b-about__partial-name">Телефон</span>
                 <div class="b-about__answer">
-                  <input type="text" name="phone" class="b-about__input">
+                  <input type="text" name="phone" class="b-about__input b-question__field">
                 </div>
               </label>
               <label class="b-about__label g-clf"><span class="b-about__partial-name b-about__partial-name_email">E-mail</span>
                 <div class="b-about__answer">
-                  <input type="email" name="email" class="b-about__input">
+                  <input type="email" name="email" class="b-about__input b-question__field">
                 </div>
               </label>
               <label class="b-about__label g-clf"><span class="b-about__partial-name">Дополнительные сведения</span>
                 <div class="b-about__answer">
-                  <textarea name="additional" class="b-about__textarea"></textarea>
+                  <textarea name="additional" class="b-about__textarea b-question__field"></textarea>
                 </div>
               </label>
               <label class="b-about__label b-about__label_empty-name g-clf"><span class="b-about__our-offer">Откуда вы узнали о нашем предложении?</span>
-                <select name="where" class="b-about__select b-about__select_offer">
+                <select name="where" class="b-about__select b-about__select_offer b-question__field">
+                  <option value="">Не выбрано</option>
                   <option value="hr">От HR-менеджера Яндекс</option>
                   <option value="yasubbotnik">Яндекс.Субботник</option>
                   <option value="yac">Yet Another Conference</option>
@@ -80,7 +81,7 @@
               </label>
               <div class="b-about__control-buttons">
                 <button type="submit" class="b-about__submit">Отправить</button>
-                <button class="b-about__clear">Очистить</button>
+                <button type="reset" class="b-about__clear">Очистить</button>
               </div>
             </div>
           </form>
