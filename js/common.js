@@ -46,6 +46,26 @@
             percentBlock.html('Анкета заполнена на ' + parseInt((100 * counter) / allElemetnsLength) + '%');
         });
 
+        // RegExp Validation email
+        var emailValidate = function(email) {
+            var expression = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return expression.test(email);
+        };
+
+        // Form on submit. Validation some fields
+        $('.b-question__list').on('submit', function (e) {
+            var emailValue = $('.b-about__partial-name_email').val(),
+                selectField = $('.b-about__select_offer');
+            if (!emailValue || emailValidate(emailValue)) {
+                e.preventDefault();
+                console.log('Email не заполнен или неверен');
+            }
+            if (!selectField.val() || selectField.val() === 'another' && !selectField.find('.b-about__input').val()) {
+                e.preventDefault();
+                console.log('Не заполнен селект');
+            }
+        });
+
     });
 
 }(jQuery));
