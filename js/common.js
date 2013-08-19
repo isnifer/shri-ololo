@@ -33,7 +33,6 @@
         percentBlock = $('.b-percents');
 
         d.on('change', function () {
-            console.log($(this).val());
             if ($(this).val()) {
                 if ($(this).get(0).nodeName !== 'SELECT' || $(this).get(0).nodeName === 'SELECT'  && !lastValue) {
                     counter++;
