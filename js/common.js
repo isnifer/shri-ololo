@@ -56,7 +56,7 @@
         $('.b-question__list').on('submit', function (e) {
             var emailValue = $('.b-about__partial-name_email').val(),
                 selectField = $('.b-about__select_offer');
-            if (!emailValue || emailValidate(emailValue)) {
+            if (!emailValue || !emailValidate(emailValue)) {
                 e.preventDefault();
                 console.log('Email не заполнен или неверен');
             }
